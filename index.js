@@ -1,8 +1,13 @@
-login("kleintjes.karel", "test", cb);
-// resultaat: fout bij het aanmelden
+const { login } = require('./admin');
 
-login("kleintjes.karel", "karel", cb);
-// resultaat: kleintjes.karel: lezen - schrijven;
+function cb(error, result) {
+  if (error) {
+    console.log(error.message);
+  } else {
+    console.log(result);
+  }
+}
 
+login("kleintjes.karel", "test", cb); 
+login("kleintjes.karel", "karel", cb); 
 login("dotjes.els", "els", cb);
-// resultaat: dotjes.els: lezen;
